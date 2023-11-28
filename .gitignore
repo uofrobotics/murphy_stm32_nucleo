@@ -50,3 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+*.pdf
+code/DebugConfig
+code/Listings
+code/Objects
+code/RTE
+code/*.kaita
+code/*.scvd
+.vscode
+*.zip
