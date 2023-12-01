@@ -53,6 +53,7 @@ void vJetson_packet_parser (void* params) {
 					
 						switch(packet) {
 							case 'f':
+								unlock_all_motors_moveable();
 								control_sabertooth(SABER_ADDR_FRONT, SABER_CMD_FWD_M1, 30);
 								control_sabertooth(SABER_ADDR_FRONT, SABER_CMD_FWD_M2, 30);
 								
@@ -75,7 +76,8 @@ void vJetson_packet_parser (void* params) {
 
 								break;
 							case 's':
-								stop_drive_motors();
+								//stop_drive_motors();
+								lock_all_motors_stopped();
 								control_red_indicator(1);
 							control_green_indicator(0);
 							

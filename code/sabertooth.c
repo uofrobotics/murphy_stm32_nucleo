@@ -69,13 +69,13 @@ void control_sabertooth(uint8_t addr, uint8_t com, uint8_t data) {
 
 void lock_all_motors_stopped(void) {
 				// PC10
-				GPIOC->BSRR = GPIO_BSRR_BS10;
+				GPIOC->BSRR = GPIO_BSRR_BR10;
 	
 }
 
 void unlock_all_motors_moveable(void) {
 			// PC10
-			GPIOC->BSRR = GPIO_BSRR_BR10;
+			GPIOC->BSRR = GPIO_BSRR_BS10;
 }
 
 

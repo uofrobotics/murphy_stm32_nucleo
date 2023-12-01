@@ -12,10 +12,9 @@
 #include "ultrasonic.h"
 #include "jetson_comms.h"
 
-#define JETSON_PARSER_PRIO (tskIDLE_PRIORITY + 4)
-#define PING_PARSER_PRIO (tskIDLE_PRIORITY + 3)
-#define CLI_RECEIVE_PRIO (tskIDLE_PRIORITY + 2)
-#define BLINKY_TASK_PRIO (tskIDLE_PRIORITY + 1)
+#define JETSON_PARSER_PRIO (tskIDLE_PRIORITY + 3)
+#define PING_PARSER_PRIO (tskIDLE_PRIORITY + 2)
+#define CLI_RECEIVE_PRIO (tskIDLE_PRIORITY + 1)
 
 /*
 note: under normal conditions code should never reach any forever_blink_led() calls
@@ -82,7 +81,7 @@ int main() {
 }
 void HardFault_Handler(void);
 void HardFault_Handler(void) {
-			
+			lock_all_motors_stopped();
 			// indicate clearly that something is wrong
 	    forever_blink_led();
 }

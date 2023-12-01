@@ -21,6 +21,11 @@ void configure_io(void) {
 	// PB15 / IN4 relay / green light
 				GPIOB->CRH |= GPIO_CRH_MODE15_0 | GPIO_CRH_MODE15_1;
 			GPIOB->CRH &= ~GPIO_CRH_CNF15_0 & ~GPIO_CRH_CNF15_1;
+	
+
+			GPIOC->CRH |= GPIO_CRH_MODE10_0 | GPIO_CRH_MODE10_1;
+			GPIOC->CRH&= ~GPIO_CRH_CNF10_0 & ~GPIO_CRH_CNF10_1;	
+
 	control_amber_indicator(0);
 	control_green_indicator(0);
 	control_red_indicator(0);
