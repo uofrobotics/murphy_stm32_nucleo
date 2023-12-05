@@ -1,6 +1,7 @@
 #include "io_control.h"
 #include "indicator.h"
 #include "usart.h"
+#include "sabertooth.h"
 void turn_on_clocks(void) {
     RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN | RCC_APB2ENR_IOPDEN | RCC_APB2ENR_AFIOEN;
     RCC->APB1ENR |= RCC_APB1ENR_USART2EN | RCC_APB1ENR_TIM2EN;
@@ -27,8 +28,9 @@ void configure_io(void) {
 			GPIOC->CRH&= ~GPIO_CRH_CNF10_0 & ~GPIO_CRH_CNF10_1;	
 
 	control_amber_indicator(0);
-	control_green_indicator(0);
+	control_green_indicator(1);
 	control_red_indicator(0);
+	unlock_all_motors_moveable();
 	
 }
 
