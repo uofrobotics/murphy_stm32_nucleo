@@ -32,5 +32,7 @@ void stop_drive_motors(void);
 
 // fast as possible hard brake by pulling S2 pin low via mosfet
 // same effect as pressing red e-stop button
+// currently, only ultrasonic ping sensor distance too low and processor faults will trigger this:
+// still todo: heartbeat
 void lock_all_motors_stopped(void);
 void unlock_all_motors_moveable(void);

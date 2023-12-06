@@ -34,7 +34,7 @@ void vPing_parser(void* param) {
 		
 		if (current_ping_distance < 10) {
 			control_green_onboard_led(1);
-			stop_drive_motors();
+			lock_all_motors_stopped();
 			control_amber_indicator(1);
 			
 		} else {

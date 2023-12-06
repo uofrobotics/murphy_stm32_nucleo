@@ -3,6 +3,7 @@
 #include "sabertooth.h"
 #include "queue.h"
 #include "io_control.h"
+#include "indicator.h"
 
 #define CHKSUM_MASK 0x7f
 
@@ -71,6 +72,9 @@ void lock_all_motors_stopped(void) {
 				// PC10
 				GPIOC->BSRR = GPIO_BSRR_BR10;
 	
+			// also send speeds of zero to all drive motors
+			stop_drive_motors();
+			control_red_indicator(1);
 }
 
 void unlock_all_motors_moveable(void) {

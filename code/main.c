@@ -84,4 +84,5 @@ void HardFault_Handler(void) {
 			lock_all_motors_stopped();
 			// indicate clearly that something is wrong
 	    forever_blink_led();
+			
 }
